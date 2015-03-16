@@ -1,0 +1,8 @@
+New Goal: <%= link_to "Create New Goal", new_goal_url %>
+<% @goals.each do |goal| %>
+<% if goal.privacy == "public" %>
+<li><%= link_to goal.title, goal_path(goal) %></li>
+<% elsif goal.privacy == "private" && goal.user_id == current_user.id %>
+<li><%= link_to goal.title, goal_path(goal) %></li>
+<% end %>
+<% end %>
