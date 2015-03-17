@@ -3,4 +3,6 @@ class Goal < ActiveRecord::Base
   validates :privacy, inclusion: { in: ['public', 'private'] }
 
   belongs_to :user
+
+  has_many :goal_comments
 end

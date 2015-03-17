@@ -6,3 +6,6 @@ New Goal: <%= link_to "Create New Goal", new_goal_url %>
 <li><%= link_to goal.title, goal_path(goal) %></li>
 <% end %>
 <% end %>
+
+<%= render 'user_comments/form' %>
+<%= render 'user_comments/comments', comments: @comments %>

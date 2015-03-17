@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :comment do
+  factory :user_comment do
     
   end
 

@@ -1,0 +1,6 @@
+<h1>Add Comment</h1>
+<form action="<%= user_user_comments_path(@user) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <textarea name="user_comment[body]" id="body"></textarea><br>
+  <input type="submit" value="Add Comment">
+</form>
