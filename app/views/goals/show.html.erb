@@ -7,3 +7,14 @@
 <p> <%= link_to "Edit Goal", edit_goal_path %> </p>
 <p> <%= button_to "Delete Goal", goal_path(@goal), method: :delete %> </p>
 <% end %>
+
+Add Comment
+<form action="/goals/<%= @goal.id %>/comments" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <textarea name="comment[body]" id="body"></textarea>
+  <input type="submit" value="Add Comment">
+</form>
+
+<% @comments.each do |comment| %>
+<p> <%= comment.body %> by:  </p>
+<% end %>

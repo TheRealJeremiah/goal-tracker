@@ -6,3 +6,14 @@ New Goal: <%= link_to "Create New Goal", new_goal_url %>
 <li><%= link_to goal.title, goal_path(goal) %></li>
 <% end %>
 <% end %>
+
+Add Comment
+<form action="/users/<%= @user.id %>/comments" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <textarea name="comment[body]" id="body"></textarea>
+  <input type="submit" value="Add Comment">
+</form>
+
+<% @comments.each do |comment| %>
+<p> <%= comment.body %> by: <%= comment.user.username %> </p>
+<% end %>
